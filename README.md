@@ -1,4 +1,4 @@
-# Ros Speech2Text with Ubuntu 16.04 and updated Google Speech Client
+# Ros Speech2Text with Ubuntu 16.04 and updated Google Speech Client + use with Team Meeting Jibo Project
 
 This was used with the "Team Meeting Project" using the Jibo robots. All information is current as of 2018-7-16.
 
