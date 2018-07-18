@@ -318,6 +318,11 @@ class SpeechRecognizer(object):
             # the automatic punctuation is only available for the beta version
             enable_automatic_punctuation=True)
 
+        # currently the way the code is set up, there is no real difference between async and sync
+        # but the async seemed to be slightly slower than sync recognition. Async allows you to have
+        # multiple recognition requests open at once and files up to 90 minutes long. Sync allows only
+        # one recogniiton request open at a time and files up to 1 minute long. However, the way the
+        # mics are set up in nodes, it seems to not really have any difference.
         if self.async:
             try:
                operation = self.speech_client.long_running_recognize(config, audio)
