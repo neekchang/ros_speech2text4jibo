@@ -40,6 +40,8 @@ Take a look at these pages (navigating Google's documentation can be kind of ann
 
 [second place to look](https://google-cloud-python.readthedocs.io/en/latest/speech/index.html)
 
+(The first link gives the best comprehensive overview of the API while the second link gives better code examples.)
+
 [migration from old Google API](https://cloud.google.com/speech-to-text/docs/python-client-migration)
 
 [stable version of speech client](https://google-cloud-python.readthedocs.io/en/latest/speech/gapic/v1/api.html)
