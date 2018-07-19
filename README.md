@@ -20,7 +20,7 @@ Also it would probably be in your best interests to move the `team_meeting_proje
 
 __NOTE:__ "SAMSON STAGE PXD1" microphones were used in our project, and if you want to use them again, open up the back and use the screwdriver to set the gain to in between the fourth and fifth tick from the bottom. This sets the sensitivity to a place that easily detects the wearer's voice but not other sounds/voices. But test this yourself because depending on the surroundings, you may need higher or lower sensitivity. Also, make sure to have the mics directly facing your mouth and not to the side of your mouth, or you may get unpleasant results.
 
-When creating individual nodes for the SAMSON mics, use the option to set the mics based on their names and not their numerical id. The numerical id often changes and sometimes just straight up doesn't work. So using the name "hw:__#__,0" works much better. If in the case that you run the launch file and keep getting an error something along the lines of unable to find the mic, then just close all your open terminals and restart roscore and relaunch the files. You shouldn't need to do this, but also this should always work (given that all your code is correct)
+When creating individual nodes for the SAMSON mics, use the option to set the mics based on their names and not their numerical id. The numerical id often changes and sometimes just straight up doesn't work. So using the name "hw:__#__,0" works much better. Just please don't assume the hardware numbers for the mics start at 1. This is not always the case, especially if you have a dedicated graphics card or something else like that. If in the case that you run the launch file and keep getting an error something along the lines of unable to find the mic, then just close all your open terminals and restart roscore and relaunch the files. You shouldn't need to do this, but also this should always work (given that all your code is correct)
 
 # Running in terminal:
 In terminal, make sure you run `roscore` first before trying to run the other files
@@ -29,7 +29,7 @@ Once you have `roscore` up and running, open another terminal window or tab and 
 
 In another terminal window or tab run `roslaunch ros_speech2text ros_speech2text.launch` to run with only one mic or `roslaunch ros_speech2text ros_speech2text_[2, 3, or 4]mics.launch` depending on how many mics you want to run with. For example if I want to run with 3 mics, I would run `roslaunch ros_speech2text ros_speech2text_3mics.launch`
 
-__Warning:__
+__Note:__
 In the case that the mics become, for whatever reason, out of order (i.e. mic 1 is no longer associated with pid 1), then unplug all of the mics, and run the different launch files in order of increasing number of mics while adding the appropriate mics one at a time.
 For example, with all of mics unplugged, insert the receiver for mic 1 and then run `roslaunch ros_speech2text ros_speech2text.launch` then add the second mic receiver and run the launch file for 2 mics and so on. You may need to exit out of all open terminals and restart terminals.
 
