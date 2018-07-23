@@ -1,0 +1,69 @@
+sudo: required
+language: generic
+cache:
+- apt
+notifications:
+  email: false
+  slack:
+    rooms:
+      secure: UpV+eMZyK6zzOz8S3c0YpCdAOMjBdApGM0ioESxK+g3HFqcgsurvJhHjRhJveZ5UPumkpMDIoOWNJmZ69+0AGh1oxgCFX38LZ6wR4TQ44+/8tyLDswraKTC/AyvFTQRXm5i/V7SWZzkdu2QNX4cOjEto8j7wEFVKicMZF25F0pPJ+EXHQvHSadx7jqIjTBQ9st0zjlHjXf7anzzeQwTbXxf+2XSjusoOdajlTVl1gvsQ19yz4dElb7GKrrqJjsp2OB4aOcT2sEKJO35xGSQjMZKoBUdOOvr9M99BO/WrmLLWBugE1opymkzLIgNMCerLyJ20DWbxfqUnFhY4vzW8rKaT0tRD3kW9G8F8LEytJnYvfzhe62CTXxmN9cC+wsfc4M+cJ1XM49DjEgvFJYS0+kp/IB0cbaLJy7h+t0HFTccuvSUB6G/FJ3+tYXRWxfx2vJzaQuaUPgdJTTsSLEPlSWgVkO3JC5OE4xxiULHJ120NpS7gAUMx0RAF9X67lc4yqVheUtJnbsyI+j47A+mI/hJkWme77uVABrpEgW7PEBUcUGw3dG3+1GErEbsrthyF+8am5GagMZUHR6gvcJg3wzns7HanHFXEYqcfNcIt8Ocx4Vxjo6ZX9Q713/bmhVBQekzOy3Rl1er/7DkEg0JxiQ9ebJz0gjE+37AUNZEPfwo=
+    on_success: change
+    on_failure: always
+env:
+  global:
+  - ROS_CI_DESKTOP="`lsb_release -cs`"
+  - CI_SOURCE_PATH=$(pwd)
+  - ROSINSTALL_FILE=$CI_SOURCE_PATH/dependencies.rosinstall
+  - CATKIN_OPTIONS=$CI_SOURCE_PATH/catkin.options
+  - ROS_PARALLEL_JOBS='-j8 -l6'
+  - REPO_NAME=ros_speech2text
+  - secure: STRpcqvGYbbmuvtgLIouJloeUib6sljp4BiXCtS1m7xRpwd33N9VMsO2nUSbvNzpKJl/TRGj0bmrjs0XbHKPdadyKPtwKl1sGD2oNJQSi8dNF0ACWwVuLwamaSnAGd8Y7PY5Dkh2NyPSVjYDxNP5nGC+cY/Jnjn3gMayln6YRBIERWilfu5iKOXqVZ9sCOneKNG+t6QrZrdMxCxwDvJuS73ZMb+J/e+OjWDnojwv/Px6DhiDsmyyQcpFOItfCY18PoCScLgwc9b/0RyLApOayJPGNIrEMgfi61BPh9rbqTkO7KRUCggg9cc6TvKprAYHdBFcjHekCL6q8FWRhCAY14tO0E1Phm8YIOD8GPCmdN9G5qcye4bb3V+LpbNXHrwQzXlhNA++Q73W3djem9At/Xxxlvjo13iGpcJEd+ORy1YYFadAzRabo5Qev3m6l6Q+FoarKjsllLVtmXPSbXuTPXjyPIdvCKFTUfDpKET8z3BQUm/U9JRF92tlbt+Z93f8oskYabps33MKvTAz6VT12TxlrY6DZHdHCCBHN7h2tAHD6sFne1dqbzMZt/RPk1kaummb0iIQrtbWQZ+OwRlKMrmu4TH1+eeG42Xn+ghQBA6YlC2tDqTndxnos5sE71B0RN8AaDIVWjWo5CXdNukKWOOj0fzidPWwQPA7BJPf5ZI=
+  - secure: S1I7kBfCKcpc77NQ/ZH3GIQbl1k/5H3ZWx9Jj0EKLQzyg7pmVJm1niP4BaDRESMJiImAMUnut17AHI26ILrypHelfdsbZlvpj24rIWzi0zsnICM5duK0aSGYwTEh207/3QjEfaJ+4J/FnCZsJk/h7/JBTaLr5kNwcnyzcUxth/fg3nRrBvv0cyF2xR+ZW/OJbH9RdetB0Xb1rUUiiJFROOqcmDUi/Y9N4crZoLdBon9chJPCeiH2aRcVAbSQiZwF+FXVpW9PWyNLm72W0OHSiNJThI3YmK0+M+X2p6bjqLet+tVn9wwUAVlykH8FatZAk6wN3IJ9fOOghAp1rFLH9FBMAdACKHcXN9wW3LkdBtu09S2aRJ5UrLoNWaDVGdQa0crz2pPLrOg5ePo7jxOHgBT5QsuurJLJsV5qVKKGNfYt1dK5c/DcjzI6G+GVMCJIvhnROgbixGVTQDPMJxPWIC6M/9E4mqicA38tTmadV/UW86Iz7o/jQoj/p4c/DoMSiry/wJNR6Dsv8l3pHJDbvPl7VGWvppALl6wOIIPk91A066k6tpdQsc3b69VQTHY1/QcXPy+Vq+RR1Fl9majTe/1G/QdrxuDDaC0BpXAcf/JFjqquJSysLLZ2s7WoEKtLgyi2dLJQk24f2IUqX4MxOBCMuhRrKCCXAMZeDkOHWBE=
+  - secure: vZZSgTIB8mrIv2CmmG3/NVBMumdwxiY5TAFvBOb0+XAGGyE1rIvog/+anR2p+2RtIsIjg+SBptEI0Wtp8aQ4w5vaWGtHvmhGS8AGeyr6x5lL2TpIn0eXLC5PJAybI4XWQ1J7LYhfceki1bmKVnMQ8Qd17slEFf5AcFljpc+EfbKaevrEOx6RqfyLdVGsNWnpMX1sFflabUGLTz/x38DUwN+b/TR/kEFhagXVN01p50KGfXGN221GAZj3pTWqB5Kbgq54IsCc0K0DeVESnXyJ0vKxTDhSxJO6vIfJJ8O9RHcWYVX/pGvRI7RYZLMChKpNL0Z5AHVUFbnj5KYDaSE+mxtJJH8GCtVcFisHrVtkwqyVPsQrvqLypr0ND4cpsNJp8zcQJlWEeeOeAfQcqdbdOTEXsgxf2v7KBRpRTwZMS/H/Db1Duo5OQV880KfQpv2VxiG2z92Wf7dp7BBR7FnmLvo7Nf+xbo7aEHXiQxvShblnNiNUSS4x5WrHv1KJuNjNr5yXVik6Tcsd7T02tlmWya8CMuBYt0kuCAueHE7BTi0kmfxdRn/76XBTtyyFGH/U4NzdOxMCmVEnh2tphSwAxq/9ljWmwM7FxUzp59qRqMeElBK//DVu7NuynmzdwvcK4sOzPq6iadR8dvchge93z3A9CLsUHd1BKTo8ygVXPlY=
+matrix:
+  include:
+  - os: linux
+    dist: trusty
+    env: ROS_DISTRO=indigo CXX=g++-4.9 CC=gcc-4.9
+    compiler: g++-4.9
+    addons:
+      apt:
+        packages:
+        - g++-4.9
+        sources:
+        - ubuntu-toolchain-r-test
+before_install:
+- sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu $ROS_CI_DESKTOP main\"
+  > /etc/apt/sources.list.d/ros-latest.list"
+- wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+- sudo apt-get update -qq
+- sudo apt-get install -y python-catkin-tools python-rosdep python-wstool ros-$ROS_DISTRO-catkin
+  libnlopt-dev
+- source /opt/ros/$ROS_DISTRO/setup.bash
+- sudo rosdep init
+- rosdep update
+install:
+- mkdir -p ~/catkin_ws/src
+- cd ~/catkin_ws/ && catkin init
+- cd ~/catkin_ws/ && catkin build
+- source devel/setup.bash
+- cd ~/catkin_ws/src && ln -s $CI_SOURCE_PATH .
+before_script:
+- cd ~/catkin_ws/src && wstool init
+- if [[ -f $ROSINSTALL_FILE ]] ; then wstool merge $ROSINSTALL_FILE ; fi
+- cd ~/catkin_ws/src && wstool up
+- cd ~/catkin_ws
+- rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
+- sudo pip install --upgrade google-cloud
+script:
+- source /opt/ros/$ROS_DISTRO/setup.bash
+- cd ~/catkin_ws
+- sudo ln /dev/null /dev/raw1394
+- catkin build $REPO_NAME $( [ -f $CATKIN_OPTIONS ] && cat $CATKIN_OPTIONS )
+- source devel/setup.bash
+- catkin build "$REPO_NAME" --catkin-make-args run_tests
+- catkin_test_results build/"$REPO_NAME" || (cat build/"$REPO_NAME"/test_results/"$REPO_NAME"/*.xml
+  ; false)
+after_success:
+- 'curl -H "Content-Type: application/json" --data ''{"source_type": "Branch", "source_name":
+  "''$TRAVIS_BRANCH''"}'' -X POST $DOCKER_PUSH_URL'
