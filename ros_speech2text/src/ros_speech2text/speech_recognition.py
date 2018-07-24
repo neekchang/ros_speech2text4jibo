@@ -301,7 +301,9 @@ class SpeechRecognizer(object):
         audio = types.RecognitionAudio(content=content)
         config = types.RecognitionConfig(
             encoding='LINEAR16',
-            # make sure the sampling rate specified in the microphone node
+            # make sure to use the sampling rate specified in the microphone node
+            # the sampling rate that you record with and the one that you tell Google
+            # to perform speech rec with needs to match
             sample_rate_hertz=self.sample_rate,
             language_code='en-US',
             # add phrase hints for better recognition of these words/phrases
