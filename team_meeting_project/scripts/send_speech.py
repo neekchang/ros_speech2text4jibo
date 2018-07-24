@@ -198,4 +198,5 @@ if __name__ == '__main__':
             print "Please check to make sure launch file has the right spelling for launch type"
     except Exception as e:
         print "Please check launch file for launch type"
+        print "Also check and see if the connection is still alive"
     rospy.spin()
