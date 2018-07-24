@@ -72,7 +72,7 @@
         <param    name ="audio_threshold" value="575"   />
 
         <!-- param for using async API call /-->
-        <param    name ="async_mode" value="True"  />
+        <param    name ="async_mode" value="False"  />
 
         <!-- param for dynamic thresholding /-->
         <param    name ="enable_dynamic_threshold" value="False"  />

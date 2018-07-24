@@ -151,7 +151,7 @@ def callback_speech_transcript(data):
                         + "\"start_time\": " + time.ctime(data.start_time.to_sec())[11:19] + ",\n" \
                         + "\"end_time\": " + time.ctime(data.end_time.to_sec())[11:19] + ",\n" \
                         + "\"speech_duration\": " + str(data.speech_duration.to_sec()) + ",\n" \
-                        + "\"received_time\": " + str(data.received_time.to_sec()) + ",\n" \
+                        + "\"received_time\": " + time.ctime(data.received_time.to_sec())[11:19] + ",\n" \
                         + "\"transcript\": " + "\"" + "" + str(data.transcript) + "\"" + ",\n" \
                         + "\"confidence\": " + str(float(data.confidence)) + ",\n" \
                         + "\"pid\": " + str(int(data.pid)) + ",\n"\

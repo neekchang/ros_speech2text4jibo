@@ -84,7 +84,7 @@ class SpeechRecognizer(object):
             min_average_volume=rospy.get_param(
                 self.node_name + '/audio_min_avg', 100),
             num_silent=rospy.get_param(
-                self.node_name + '/n_silent_chunks', 5),
+                self.node_name + '/n_silent_chunks', 6),
         )
         # sig_non_silence is mainly to keep track of whether or not the
         # start utterance message should be sent
