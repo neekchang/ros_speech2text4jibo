@@ -273,7 +273,7 @@ class SpeechRecognizer(object):
         msg.event = evt
         msg.utterance_id = utterance_id
         msg.audio_path = self.utterance_file(utterance_id)
-        return msgc valgrind errors
+        return msg
 
     def utterance_file(self, utterance_id):
         file_name = 'utterance_{}.wav'.format(utterance_id)
