@@ -184,14 +184,19 @@ class SpeechDetector:
                 self.not_silent += 1 # for detecting whether significant spech is occurring or not
 
     # checks if the threshold for number of silent blocks been crossed
-    # if it has, then it will stop recording and save
+    #
+    # if property is true, then it will stop recording and save
     @property
     def found(self):
         return (self.num_silent > self.max_num_silent)
 
-    # checks if the threshold for number of significant blocks of sound been crossed
-    # if it has, AND it is the beginning of an utterance (start_speech is True) then
-    # stop recording but hold on to it, send the start_utterance message and resume
+    # checks if the threshold for number of significant blocks of sound has been crossed
+    #
+    # ideally this would be based on seconds, but the way this is set up, it is based
+    # on blocks of sound which doesn't necessarily translate well into seconds
+    #
+    # if property is true, AND it is the beginning of an utterance (start_speech is True)
+    # then stop recording but hold on to it, send the start_utterance message and resume
     @property
     def sig_non_silent(self):
         return (self.not_silent > 8)
