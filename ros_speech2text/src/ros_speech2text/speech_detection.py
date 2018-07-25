@@ -221,7 +221,7 @@ class SpeechDetector:
             #
             # this also technically causes you to lose the initial start time of the speech so the
             # speech duration will be slightly shorter (~0.6 seconds) than the actual speech duration
-            # this wouldn't be too hard to account for if you need to, but for our purposes, it
+            # this shouldn't be too hard to account for if you need to, but for our purposes, it
             # was not necessary
             if self.sig_non_silent & start_speech:
                 aud_data = self.chunks
