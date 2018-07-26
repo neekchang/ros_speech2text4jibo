@@ -195,7 +195,7 @@ if __name__ == '__main__':
         elif launch_type == "tablet":
             establish_tablet_connection()
         else:
-            print "\nPlease check spelling for launch type is either \"tablet\" or \"local\"\n\n"
+            print "\nPlease check spelling for launch type is either tablet or local\n\n"
             sys.exit()
     except Exception as e:
         print "Check and see if the connection is alive"
