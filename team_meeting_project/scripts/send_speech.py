@@ -187,16 +187,16 @@ if __name__ == '__main__':
     node_name = rospy.get_name()
     # the default will be local but this should never matter because the type is dependent upon
     # which launch file you used (and those shouldn't really ever change)
-    launch_type = str(rospy.get_param(node_name + '/type', "local"))
     try:
+        launch_type = str(rospy.get_param(node_name + '/type', "local"))
         if launch_type == "local":
             rospy.Subscriber("speech_to_text/start_utterance", start_utterance, callback_start_utterance)
             rospy.Subscriber("/speech_to_text/transcript", transcript, callback_speech_transcript)
         elif launch_type == "tablet":
             establish_tablet_connection()
         else:
-            print "Please check to make sure launch file has the right spelling for launch type"
+            print "\nPlease check spelling for launch type is either \"tablet\" or \"local\"\n\n"
+            sys.exit()
     except Exception as e:
-        print "Please check launch file for launch type"
-        print "Also check and see if the connection is still alive"
+        print "Check and see if the connection is alive"
     rospy.spin()

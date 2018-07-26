@@ -2,7 +2,6 @@
     <!-- sets env var for google apis to work /-->
     <env      name ="GOOGLE_APPLICATION_CREDENTIALS"   value="$(find ros_speech2text)/ros-speech2text-google-stt-cred" />
 
-    <!-- starts node for synchronous s2t /-->
     <node pkg="ros_speech2text" name="ros_speech2text1" type="s2t.py" output="screen">
 
         <!-- location of the speech history for the session /-->
