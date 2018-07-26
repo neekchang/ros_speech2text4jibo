@@ -23,7 +23,7 @@ When creating individual nodes for the SAMSON mics, use the option to set the mi
 # Running in terminal:
 In terminal, make sure you run `roscore` first before trying to run the other files
 
-Once you have `roscore` up and running, open another terminal window or tab and run `roslaunch team_meeting_project send_speech_to_tablet.launch` or `roslaunch team_meeting_project send_speech_to_local.launch` whether you want to run the code with a TCP connection to a tablet or locally without the need for the TCP connection
+Once you have `roscore` up and running, open another terminal window or tab and run `roslaunch team_meeting_project send_speech.launch type:="tablet"` or `roslaunch team_meeting_project send_speech.launch type:="local"` whether you want to run the code with a TCP connection to a tablet or locally without the need for the TCP connection.
 
 In another terminal window or tab run `roslaunch ros_speech2text ros_speech2text.launch` to run with only one mic or `roslaunch ros_speech2text ros_speech2text_[2, 3, or 4]mics.launch` depending on how many mics you want to run with. For example if I want to run with 3 mics, I would run `roslaunch ros_speech2text ros_speech2text_3mics.launch`
 
