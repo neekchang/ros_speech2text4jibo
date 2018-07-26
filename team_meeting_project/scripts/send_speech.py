@@ -176,21 +176,20 @@ def callback_start_utterance(data):
                     + "}"
     print "Sending start_utterance: %s\n" % start_indicator
 
-# depending on which launch file you used, the code will be run either
+# depending on which launch type you specify, the code will be run either
 # locally on the machine without the need for a client to connect or
 # it will run with the server client connection
 if __name__ == '__main__':
     language_client = language.LanguageServiceClient()
 
     rospy.init_node('stt_message_sender', anonymous = True)
-    # which launch file did you use
-    node_name = rospy.get_name()
-    # the default will be local but this should never matter because the type is dependent upon
-    # which launch file you used (and those shouldn't really ever change)
+    
     try:
+        # if no launch type is specified at the time of execution, it will crash
+        node_name = rospy.get_name()
         launch_type = str(rospy.get_param(node_name + '/type', "local"))
         if launch_type == "local":
-            rospy.Subscriber("speech_to_text/start_utterance", start_utterance, callback_start_utterance)
+            rospy.Subscriber("/speech_to_text/start_utterance", start_utterance, callback_start_utterance)
             rospy.Subscriber("/speech_to_text/transcript", transcript, callback_speech_transcript)
         elif launch_type == "tablet":
             establish_tablet_connection()
