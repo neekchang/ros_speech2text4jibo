@@ -20,7 +20,7 @@
         <param    name ="audio_rate" value="32000" />
 
         <!-- param for static thresholding /-->
-        <param    name ="audio_threshold" value="575"   />
+        <param    name ="audio_threshold" value="565"   />
 
         <!-- param for using async API call /-->
         <param    name ="async_mode" value="False"  />

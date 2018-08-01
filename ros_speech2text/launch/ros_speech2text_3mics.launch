@@ -20,7 +20,7 @@
         <param    name ="audio_rate" value="32000" />
 
         <!-- param for static thresholding /-->
-        <param    name ="audio_threshold" value="575"   />
+        <param    name ="audio_threshold" value="565"   />
 
         <!-- param for using async API call /-->
         <param    name ="async_mode" value="False"  />
@@ -29,7 +29,7 @@
         <param    name ="enable_dynamic_threshold" value="False"  />
 
         <!-- param for start_utterance messages /-->
-        <param    name ="enable_start_utterance" value="False"  />
+        <param    name ="enable_start_utterance" value="True"  />
 
         <!-- activate audio recording when volume is this percentage higher than average /-->
         <!-- <param    name ="audio_dynamic_percentage" value="50"  /> -->
@@ -68,7 +68,7 @@
         <param    name ="audio_rate" value="32000" />
 
         <!-- param for static thresholding /-->
-        <param    name ="audio_threshold" value="575"   />
+        <param    name ="audio_threshold" value="565"   />
 
         <!-- param for using async API call /-->
         <param    name ="async_mode" value="False"  />
@@ -116,7 +116,7 @@
         <param    name ="audio_rate" value="32000" />
 
         <!-- param for static thresholding /-->
-        <param    name ="audio_threshold" value="575"   />
+        <param    name ="audio_threshold" value="565"   />
 
         <!-- param for using async API call /-->
         <param    name ="async_mode" value="False"  />

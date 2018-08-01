@@ -108,7 +108,7 @@ class TabletSession:
         try:
             self.conn, addr = s.accept()
             self.conn.settimeout(None)
-            rospy.Subscriber("speech_to_text/start_utterance", start_utterance, self.callback_start_utterance)
+            rospy.Subscriber("/speech_to_text/start_utterance", start_utterance, self.callback_start_utterance)
             rospy.Subscriber("/speech_to_text/transcript", transcript, self.callback_speech_transcript)
             print "Finished subscribing"
             print 'Connection address:', addr

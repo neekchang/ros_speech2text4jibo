@@ -115,7 +115,7 @@ class SpeechDetector:
         lock the value of avg volume to maintain the standard thresholding
         standard throughout the sentence. Whenever receiving a frame that
         has volume that is too low, we increase num_silent. When num_silent
-        exceeds ten, we consider the sentence finished.
+        exceeds seven, we consider the sentence finished.
 
     :param threshold: float
         Static or dynamic threshold. Interpreted as a percentage when dynamic.
@@ -125,7 +125,7 @@ class SpeechDetector:
 
     def __init__(self, rate, threshold, dynamic_threshold=False,
                  dynamic_threshold_frame=3, chunk_size=None,
-                 min_average_volume=0., num_silent=6):
+                 min_average_volume=0., num_silent=7):
         self.rate = rate
         if dynamic_threshold:
             self.silence_detect = DynamicSilenceDetector(
