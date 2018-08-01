@@ -14,7 +14,7 @@
         <!-- <param    name ="audio_device_idx" value="7" /> -->
 
         <!-- device name of audio source. Only used if audio_device_idx is not set. Uses the first device that contains the given name (case insensitive). /-->
-        <param    name ="audio_device_name" value="hw:2,0" /> 
+        <param    name ="audio_device_name" value="hw:0,0" /> 
 
         <!-- rate for your audio capturing device /-->
         <param    name ="audio_rate" value="32000" />
@@ -62,7 +62,7 @@
         <!-- <param    name ="audio_device_idx" value="8" /> -->
 
         <!-- device name of audio source. Only used if audio_device_idx is not set. Uses the first device that contains the given name (case insensitive). /-->
-        <param    name ="audio_device_name" value="hw:3,0" /> 
+        <param    name ="audio_device_name" value="hw:1,0" /> 
 
         <!-- rate for your audio capturing device /-->
         <param    name ="audio_rate" value="32000" />
@@ -110,7 +110,7 @@
         <!-- <param    name ="audio_device_idx" value="9" /> -->
 
         <!-- device name of audio source. Only used if audio_device_idx is not set. Uses the first device that contains the given name (case insensitive). /-->
-        <param    name ="audio_device_name" value="hw:4,0" /> 
+        <param    name ="audio_device_name" value="hw:2,0" /> 
 
         <!-- rate for your audio capturing device /-->
         <param    name ="audio_rate" value="32000" />
@@ -158,7 +158,7 @@
         <!-- <param    name ="audio_device_idx" value="9" /> -->
 
         <!-- device name of audio source. Only used if audio_device_idx is not set. Uses the first device that contains the given name (case insensitive). /-->
-        <param    name ="audio_device_name" value="hw:5,0" /> 
+        <param    name ="audio_device_name" value="hw:3,0" /> 
 
         <!-- rate for your audio capturing device /-->
         <param    name ="audio_rate" value="32000" />
